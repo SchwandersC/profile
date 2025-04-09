@@ -15,6 +15,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+
 }
 
 .about-section .content {
@@ -49,6 +50,10 @@
     }
 }
 
+/* Place the contact button styles here */
+
+  
+
 .about-section .image-wrapper {
     z-index: 2;
     img {
@@ -71,7 +76,7 @@
         }
 
         .nav-left img {
-            height: 35px
+            height: 35px;
         }
 
         .nav-right {

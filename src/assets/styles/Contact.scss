@@ -20,8 +20,38 @@
 
   fieldset {
     background-color: white;
+    z-index: 1;
+    position: relative;
+  }
+
+  .MuiInputBase-root {
+    background-color: white !important;
+    z-index: 2;
+    position: relative;
+    padding-top: 6px !important; // Gives room for label to float
+  }
+
+  .MuiInputBase-input {
+    color: #000 !important;
+    background-color: transparent !important;
+    z-index: 4;
+    position: relative;
+  }
+
+  .MuiInputLabel-root {
+    color: #333 !important;
+    background-color: white;
+    z-index: 3;
+    padding: 0 4px;
+  }
+
+  .MuiInputBase-input::placeholder {
+    color: #666 !important;
+    z-index: 5;
+    opacity: 1;
   }
 }
+
 
 label {
   font-size: 1.2rem;
@@ -30,8 +60,11 @@ label {
 
 .form-flex {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   padding-bottom: 15px;
+  overflow: visible;
+  position: relative;
 }
 
 .form-flex .MuiFormControl-root {

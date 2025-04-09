@@ -1,91 +1,137 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
+import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faMeta, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+  "Python",
+  "R",
+  "SQL",
+  "Julia",
+  "Spark",
+  "TensorFlow",
+  "Power BI"
 ];
 
 const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+  "Git",
+  "Docker",
+  "Azure",
+  "AWS",
+  "Linux",
+  "DataBricks"
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+  "OpenAI",
+  "LangChain",
+  "NLTK",
+  "Hugging Face",
+  "LlamaIndex"
+];
+
+const implementationFirst = [
+  "Time-Series Forecasting",
+  "Reccomendation Systems",
+  "Fraud Detection"
+];
+
+const implementationSecond = [
+  "A/B Testing",
+  "CI/CD Pipelines",
+  "Predictive Maintence"
+];
+
+const implementationThird = [
+  "Prompt Engineering",
+  "Fine-Tuning",
+  "RAG",
+  "Few-shot learning"
 ];
 
 function Expertise() {
-    return (
+  return (
     <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsThird.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+      <div className="skills-container">
+        <h1>Expertise</h1>
+        <div className="skills-grid">
+          <div className="skill">
+            <FontAwesomeIcon icon={faPython} size="3x"/>
+            {/* Wrap text-related elements in an accent box */}
+            <div className="accent-box">
+              <h3>Data Science and ML</h3>
+              <p>
+                Data piles up fast—and making sense of it isn't easy.
+                I specialize in transforming high-volume, messy data into forecasts,
+                machine learning models, and dashboards that deliver insight and drive real business value.
+              </p>
+              <div className="flex-chips">
+                <span className="chip-title">Tech stack:</span>
+                {labelsFirst.map((label, index) => (
+                  <Chip key={index} className="chip" label={label} />
+                ))}
+              </div>
+              <div className="flex-chips">
+                <span className="chip-title">Implementation:</span>
+                {implementationFirst.map((label, index) => (
+                  <Chip key={index} className="chip" label={label} />
+                ))}
+              </div>
             </div>
+          </div>
+
+          <div className="skill">
+            <FontAwesomeIcon icon={faDocker} size="3x"/>
+            <div className="accent-box">
+              <h3>Process Optimization</h3>
+              <p>
+                Whether you're scaling operations or just getting started,
+                I deliver automation solutions that streamline workflows,
+                remove bottlenecks, and simplify complex processes.
+              </p>
+              <div className="flex-chips">
+                <span className="chip-title">Tech stack:</span>
+                {labelsSecond.map((label, index) => (
+                  <Chip key={index} className="chip" label={label} />
+                ))}
+              </div>
+              <div className="flex-chips">
+                <span className="chip-title">Implementation:</span>
+                {implementationSecond.map((label, index) => (
+                  <Chip key={index} className="chip" label={label} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="skill">
+            <FontAwesomeIcon icon={faMeta} size="3x"/>
+            <div className="accent-box">
+              <h3>Generative AI</h3>
+              <p>
+                Bring modern AI into your workflows with purpose and clarity.
+                I build enterprise-grade Gen-AI tools that fit real-world needs and scale with your goals.
+              </p>
+              <div className="flex-chips">
+                <span className="chip-title">Tech stack:</span>
+                {labelsThird.map((label, index) => (
+                  <Chip key={index} className="chip" label={label} />
+                ))}
+              </div>
+              <div className="flex-chips">
+                <span className="chip-title">Implementation:</span>
+                {implementationThird.map((label, index) => (
+                  <Chip key={index} className="chip" label={label} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    );
+  );
 }
 
 export default Expertise;

@@ -1,49 +1,50 @@
 import React from "react";
 import '../assets/styles/Consulting.scss';
-
-interface ConsultingProject {
-  title: string;
-  description: string;
-  linkLabel: string;
-}
-
-const consultingProjects: ConsultingProject[] = [
-  {
-    title: "Web Scraping & Data Automation",
-    description: "Automate data collection from multiple sources, saving hours of manual work.",
-    linkLabel: "Schedule a Consultation"
-  },
-  {
-    title: "AI-Driven Content Generation",
-    description: "Leverage generative AI to craft engaging copy, product descriptions, and more.",
-    linkLabel: "Learn More"
-  },
-  {
-    title: "Process Optimization",
-    description: "Streamline your workflows with DevOps best practices, CI/CD, and Dockerized solutions.",
-    linkLabel: "Optimize Now"
-  },
-];
+import DynamicText from "./DynamicText"; // Adjust the path if needed
 
 function Consulting() {
   return (
     <div className="consulting-container" id="consulting">
-      <h1>Consulting Services</h1>
-      <p>
-        Below are some of the projects and services I can help you with. Feel free to reach out if you have a custom need.
-      </p>
-      <div className="consulting-grid">
-        {consultingProjects.map((project, index) => (
-          <div className="consulting-card" key={index}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            {/* Anchor link to your "Contact" section */}
-            <a href="#contact" className="consulting-link">
-              {project.linkLabel}
-            </a>
-          </div>
-        ))}
+      
+        <h1>Consulting Services</h1>
+        <h2>Curious what we could build together? Here are a few ideas:</h2>
+      <div className="accent-box">
+        <ul className="consulting-pst">
+          <h2>
+            1. ML models that predict{" "}
+            <DynamicText 
+              options={[
+                "market prices",
+                "equipment failures",
+                "user behavior",
+                "customer churn",
+                "inventory levels",
+                "sales forecasts",
+                "demand trends",
+                "fraud detection",
+                "credit risk",
+                "maintenance schedules",
+                "energy consumption",
+                "weather patterns",
+                "traffic flow",
+                "social media sentiment",
+                "product recommendations"
+              ]}
+              interval={3000}
+            />.
+          </h2>
+          <h2>
+            2. Chatbots, RAG pipelines, and summarization tools using Generative AI.
+          </h2>
+          <h2>
+            3. Dashboards with actionable KPIs for better decision-making.
+          </h2>
+          <h2>
+            4. Not sure where to start? I can analyze your processes to uncover opportunities for automation and AI integration.
+          </h2>
+        </ul>
       </div>
+        <a href="#contact" className="consulting-button">Contact Me</a>
     </div>
   );
 }
