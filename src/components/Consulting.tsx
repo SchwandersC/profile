@@ -30,7 +30,7 @@ function Consulting() {
                 "social media sentiment",
                 "product recommendations"
               ]}
-              interval={3000}
+              interval={2000}
             />.
           </h2>
           <h2>
