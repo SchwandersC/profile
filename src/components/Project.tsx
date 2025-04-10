@@ -15,22 +15,22 @@ function Project() {
             <div className="project">
                 <a href="https://github.com/SchwandersC/GATA" target="_blank" rel="noreferrer"><img src={gata} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/SchwandersC/GATA" target="_blank" rel="noreferrer"><h2>GATA</h2></a>
-                <p>Designed my very own Generative ai teachers assistant using multi modal RAG to give students access to the exact textbook, lecture, and syllabus information they need in seconds. Hosted on Streamlit with user query information stored in MongoDB.</p>
+                <p>A multi-modal generative AI teachers assistant. Capable of retreiving exact lecture and textbook information related to student questions. </p>
             </div>
             <div className="project">
                 <a href= "https://drive.google.com/file/d/1G7Z_0lVMd2cwqQlT7TZhJp6dk4mZ8lSG/view?usp=sharing" target="_blank" rel="noreferrer"><img src={tfk} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href= "https://drive.google.com/file/d/1G7Z_0lVMd2cwqQlT7TZhJp6dk4mZ8lSG/view?usp=sharing" target="_blank" rel="noreferrer"><h2>Non-Profit Event Entry Automation</h2></a>
-                <p>Built an automated system using web scraping to gather event data and generative AI to craft exciting descriptions. The automation cut down dozens of hours spent on manual data entry.</p>
+                <p>An automated event creation system using web scraping and generative AI to cut down dozens of hours spent on manual data entry.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/SchwandersC/Natural-Language-SQL-Query-Engine-for-NBA-Data" target="_blank" rel="noreferrer"><img src={genaidb} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/SchwandersC/Natural-Language-SQL-Query-Engine-for-NBA-Data" target="_blank" rel="noreferrer"><h2>Gen AI SQL Query Generator</h2></a>
-                <p>Utilized generative AI to generate SQL queries based on natural language input. Then used Spark to handle large data operations and output database information.</p>
+                <p>A natural langauge to SQL query convertor, using Spark to handle large database operations.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/SchwandersC/NCAA_Advanced_Archetypes" target="_blank" rel="noreferrer"><img src={clusters} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/SchwandersC/NCAA_Advanced_Archetypes" target="_blank" rel="noreferrer"><h2>NCAA Player Archetypes</h2></a>
-                <p>Created an advanced player archetype model for Pivot Analysis adn their NCAA coaching clients. Leveraged fuzzy clustering in R to capture unique player tendency combinations.</p>
+                <p>An advanced player archetype model for Pivot Analysis and their NCAA coaching clients. Leveraged fuzzy clustering in R to capture unique player tendency combinations.</p>
             </div>
             <div className="project">
                 <a href="https://drive.google.com/file/d/13WpITTXzrGM-5E1Uq9XceFbz47CQ5T1T/view?usp=sharing" target="_blank" rel="noreferrer"><img src={revenue} className="zoom" alt="thumbnail" width="100%"/></a>

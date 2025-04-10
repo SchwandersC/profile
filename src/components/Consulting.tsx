@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import '../assets/styles/Consulting.scss';
 import DynamicText from "./DynamicText"; // Adjust the path if needed
 
 function Consulting() {
+  useEffect(() => {
+    // Select the consulting container element.
+    const consultingContainer = document.querySelector('.consulting-container');
+    
+    // Create an observer that adds the "visible" class when the element is in view.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      { threshold: 0.4 } // Adjust threshold as needed.
+    );
+    
+    if (consultingContainer) {
+      observer.observe(consultingContainer);
+    }
+    
+    // Clean up observer on component unmount.
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="consulting-container" id="consulting">
-      
-        <h1>Consulting Services</h1>
-        <h2>Curious what we could build together? Here are a few ideas:</h2>
+      <h1>Consulting Services</h1>
+      <h2>Curious what we could build together? Here are a few ideas:</h2>
       <div className="accent-box">
         <ul className="consulting-pst">
           <h2>
@@ -44,7 +69,7 @@ function Consulting() {
           </h2>
         </ul>
       </div>
-        <a href="#contact" className="consulting-button">Contact Me</a>
+      <a href="#contact" className="consulting-button">Contact Me</a>
     </div>
   );
 }
