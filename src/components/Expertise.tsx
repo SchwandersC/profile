@@ -34,14 +34,14 @@ const labelsThird = [
 
 const implementationFirst = [
   "Time-Series Forecasting",
-  "Reccomendation Systems",
+  "Recommendation Systems",
   "Fraud Detection"
 ];
 
 const implementationSecond = [
   "A/B Testing",
   "CI/CD Pipelines",
-  "Predictive Maintence"
+  "Predictive Maintenance"
 ];
 
 const implementationThird = [
