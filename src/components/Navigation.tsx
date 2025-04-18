@@ -21,7 +21,9 @@ const navItems = [
   ['Expertise', 'expertise'],
   ['Consulting', 'consulting'], // clicking this takes you directly to Contact
   ['Projects', 'projects'],
+  ['Tech Stack', 'tech-stack'],
   ['Contact', 'contact']
+  
 ];
 
 function Navigation({parentToChild, modeChange}: any) {

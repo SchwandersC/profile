@@ -1,10 +1,12 @@
+/* src/assets/styles/Consulting.scss */
+
 .consulting-container {
   width: 100%;
   padding: 5% 10%;
   display: flex;
   flex-direction: column;
   text-align: left;
-  align-items: flex-start; // Ensures children only take up as much width as needed
+  align-items: flex-start;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -24,8 +26,43 @@
     font-weight: normal;
   }
 
-  .consulting-pst {
-    margin-bottom: 2rem; // optional spacing before button
+  /* --- Replace .consulting-pst with a UL that holds each LI --- */
+  .consulting-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem; /* space before the button */
+
+    li {
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    /* Header line: number + title */
+    .consulting-item-header {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
+
+      .consulting-number {
+        font-weight: 700;
+        margin-right: 0.5rem;
+        color: #3f51b5; /* accent color */
+      }
+
+      .consulting-title {
+        font-weight: 700;
+        font-size: 1.1em;
+        color: white;
+      }
+    }
+
+    /* The descriptive paragraph below the header */
+    .consulting-description {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
   }
 
   .consulting-button {
@@ -39,9 +76,40 @@
     cursor: pointer;
     display: inline-block;
     transition: background-color 0.3s ease;
-    
+
     &:hover {
       background-color: #2e3b8f;
+    }
+  }
+}
+.tech-stack-link {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #ccc;
+
+  a {
+    color: #3f51b5;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.light-mode {
+  .consulting-container {
+    /* Make the title text dark in light mode */
+    .consulting-item-header {
+      .consulting-title {
+        color: #222;    // or whatever dark color you prefer
+      }
+    }
+
+    /* And the description slightly darker, too */
+    .consulting-description {
+      color: #222;    // a softer dark tone
     }
   }
 }

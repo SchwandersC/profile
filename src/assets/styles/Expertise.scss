@@ -59,7 +59,15 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     }
   }
-}
+    .tech-stack-cta {
+      color: #000;             // change text to black
+  
+      a {
+        color: #1a237e;        // optionally adjust link color for contrast
+      }
+    }
+  }
+
 
 .chip {
   color: rgb(39, 40, 34) !important;
@@ -103,6 +111,24 @@
 .flex-chips + .flex-chips {
   margin-top: 20px;
 }
+
+.tech-stack-cta {
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #ccc;
+
+  a {
+    color: #3f51b5;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 
 @media screen {
   @media (max-width: 768px) {

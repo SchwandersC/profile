@@ -1,9 +1,29 @@
+// src/components/Expertise.tsx
 import React, { useEffect } from "react";
 import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMeta, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
+
+const dsOutcomeLabels = [
+  "Cost reduction",
+  "Revenue Growth",
+  "Data‑Driven Decisions"
+];
+
+const procOutcomeLabels = [
+  "Resource Efficiency",
+  "Time Savings",
+  "Scalability",
+  "Consistency"
+];
+
+const genProcessesLabels = [
+  "Data entry",
+  "Data collection",
+  "Information Retrieval"
+];
 
 const labelsFirst = [
   "Python",
@@ -33,7 +53,7 @@ const labelsThird = [
 ];
 
 const implementationFirst = [
-  "Time-Series Forecasting",
+  "Time‑Series Forecasting",
   "Recommendation Systems",
   "Fraud Detection"
 ];
@@ -46,34 +66,23 @@ const implementationSecond = [
 
 const implementationThird = [
   "Prompt Engineering",
-  "Fine-Tuning",
+  "Fine‑Tuning",
   "RAG",
-  "Few-shot learning"
+  "Few‑shot Learning"
 ];
 
 function Expertise() {
   useEffect(() => {
-    // Get all the individual skill elements inside the skills grid.
     const skillElements = document.querySelectorAll('.skills-grid .skill');
-    
-    // Create an observer that toggles the "visible" class based on intersection.
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          } else {
-            entry.target.classList.remove('visible');
-          }
+          entry.target.classList.toggle('visible', entry.isIntersecting);
         });
       },
-      { threshold: 0.4 } // Adjust threshold as needed.
+      { threshold: 0.4 }
     );
-    
-    // Observe each skill element.
     skillElements.forEach(el => observer.observe(el));
-    
-    // Clean up observer on component unmount.
     return () => observer.disconnect();
   }, []);
 
@@ -82,78 +91,95 @@ function Expertise() {
       <div className="skills-container">
         <h1>Expertise</h1>
         <div className="skills-grid">
+
+          {/* Data Science & ML */}
           <div className="skill">
             <FontAwesomeIcon icon={faPython} size="3x" />
-            {/* Wrap text-related elements in an accent box */}
             <div className="accent-box">
-              <h3>Data Science and ML</h3>
+              <h3>Data Science & ML</h3>
               <p>
-                Data piles up fast—and making sense of it isn't easy.
-                I specialize in transforming high-volume, messy data into forecasts,
-                machine learning models, and dashboards that deliver insight and drive real business value.
+                Transforming high‑volume, messy data into forecasts, 
+                machine learning models, and dashboards that drive real 
+                business value.
               </p>
+
               <div className="flex-chips">
-                <span className="chip-title">Tech stack:</span>
-                {labelsFirst.map((label, index) => (
-                  <Chip key={index} className="chip" label={label} />
+                <span className="chip-title">Added Value:</span>
+                {dsOutcomeLabels.map((label, i) => (
+                  <Chip key={i} className="chip" label={label} />
                 ))}
               </div>
+
+
+
               <div className="flex-chips">
                 <span className="chip-title">Implementation:</span>
-                {implementationFirst.map((label, index) => (
-                  <Chip key={index} className="chip" label={label} />
+                {implementationFirst.map((label, i) => (
+                  <Chip key={i} className="chip" label={label} />
                 ))}
               </div>
             </div>
           </div>
 
+          {/* Process Optimization */}
           <div className="skill">
             <FontAwesomeIcon icon={faDocker} size="3x" />
             <div className="accent-box">
               <h3>Process Optimization</h3>
               <p>
-                Whether you're scaling operations or just getting started,
-                I deliver automation solutions that streamline workflows,
-                remove bottlenecks, and simplify complex processes.
+                Delivering automation solutions that streamline workflows 
+                and simplify complex processes at scale.
               </p>
+
               <div className="flex-chips">
-                <span className="chip-title">Tech stack:</span>
-                {labelsSecond.map((label, index) => (
-                  <Chip key={index} className="chip" label={label} />
+                <span className="chip-title">Business outcome:</span>
+                {procOutcomeLabels.map((label, i) => (
+                  <Chip key={i} className="chip" label={label} />
                 ))}
               </div>
+
+
               <div className="flex-chips">
                 <span className="chip-title">Implementation:</span>
-                {implementationSecond.map((label, index) => (
-                  <Chip key={index} className="chip" label={label} />
+                {implementationSecond.map((label, i) => (
+                  <Chip key={i} className="chip" label={label} />
                 ))}
               </div>
             </div>
           </div>
 
+          {/* Generative AI */}
           <div className="skill">
             <FontAwesomeIcon icon={faMeta} size="3x" />
             <div className="accent-box">
               <h3>Generative AI</h3>
               <p>
-                Bring modern AI into your workflows with purpose and clarity.
-                I build enterprise-grade Gen-AI tools that fit real-world needs and scale with your goals.
+                Building enterprise‑grade Gen‑AI tools that fit real‑world needs 
+                and scale with your goals.
               </p>
+
               <div className="flex-chips">
-                <span className="chip-title">Tech stack:</span>
-                {labelsThird.map((label, index) => (
-                  <Chip key={index} className="chip" label={label} />
+                <span className="chip-title">Automation Opportunities:</span>
+                {genProcessesLabels.map((label, i) => (
+                  <Chip key={i} className="chip" label={label} />
                 ))}
               </div>
+
+
               <div className="flex-chips">
                 <span className="chip-title">Implementation:</span>
-                {implementationThird.map((label, index) => (
-                  <Chip key={index} className="chip" label={label} />
+                {implementationThird.map((label, i) => (
+                  <Chip key={i} className="chip" label={label} />
                 ))}
               </div>
             </div>
           </div>
+
         </div>
+          <div className="tech-stack-cta">
+            Interested in the specific tools and technologies I use?{" "}
+            <a href="#tech-stack">Explore my tech stack →</a>
+          </div>
       </div>
     </div>
   );

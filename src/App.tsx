@@ -7,6 +7,7 @@ import {
   Contact,
   Navigation,
   Footer,
+  TechStack,
 } from "./components";
 import FadeIn from './components/FadeIn';
 import './index.scss';
@@ -34,6 +35,7 @@ function App() {
             <Expertise/>
             <Consulting/>
             <Project/>
+            <TechStack/>
             <Contact/>
         </FadeIn>
         <Footer />

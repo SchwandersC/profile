@@ -1,167 +1,145 @@
-.dark-mode .about-section {
-    background-color: rgba(0, 0, 0, 0.2);
-}
+// src/assets/styles/Main.scss
 
-.about-section {
+@keyframes slideInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animated-name {
+    animation: slideInDown 1s ease-out;
+    color: white;
+    margin: 0 0 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tagline {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 0 10px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .cta-line {
+    font-size: 1.0em;
+    color: #fff;
+    margin: 0 0 12px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .cta-small-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    svg {
+      margin-left: 6px;
+      font-size: 1.2em;
+      transition: transform 0.2s ease;
+    }
+  
+    &:hover {
+      background-color: #3f51b5;
+
+      transform: translateY(-1px);
+  
+      svg {
+        transform: translateY(3px);
+      }
+    }
+  }
+
+  .text-glass {
+    backdrop-filter: blur(2px);          // Main blur effect
+    -webkit-backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.4); // Semi-transparent dark background
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+  
+    // Optional: extra polish
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  
+  /* -- existing dark‑mode & layout styles below -- */
+  
+  .dark-mode .about-section {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-section {
     display: flex;
     gap: 30px;
-    justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    padding: 0px 15%;
+    padding: 0 15%;
     min-height: 700px;
-    background-image: url("../images/bg-dark.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-
-} 
-
-.about-section .content {
-    text-align: left;
-    z-index: 2;
-
-    .social_icons {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        color: white;
-
-        svg {
-            font-size: 1.8em;
-        }
-    }
-
-    .mobile_social_icons {
-        display: none;
-    }
-
-    p {
-        font-size: 1.5em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
-
-    h1 {
-        font-size: 5em;
-        margin-block-start: 0;
-        margin-block-end: 0;
-      }
-      
-}
-
-/* Place the contact button styles here */
-
+    background: url("../images/bg-dark.png") center/cover fixed no-repeat;
+  }
   
-
-.about-section .image-wrapper {
+  .about-section .content {
     z-index: 2;
+    text-align: left;
+  
+    .social_icons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: white;
+  
+      svg { font-size: 1.8em; }
+    }
+  
+    .mobile_social_icons { display: none; }
+  
+    h1 { font-size: 5em; margin: 0; }
+  }
+  
+  .about-section .image-wrapper {
+    z-index: 2;
+  
     img {
-        width: 150px;
-        border-radius: 50%;
+      width: 150px;
+      border-radius: 50%;
     }
-}
-
-.about p {
-    text-align: center;
-    padding-top: 30%;
-    padding-bottom: 30%;
-}
-
-@media screen {
-    @media (max-width: 567px) {
-
-        .about-section h1 {
-            font-size: 2.0em !important;
-            text-align: left;
-        }
-
-        .nav-left{
-            padding-top: 20px;
-            float:left;
-        }
-
-        .nav-left img {
-            height: 35px;
-        }
-
-        .nav-right {
-            float:right;
-        }
-
-        .nav-right li {
-            padding: 10px 15px;
-            list-style:none;
-            font-size:13px;
-            color:white;
-            width: 10%;
-        }
-
-        .nav-right ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        body {
-            width: 100%;
-        }
-
-        .about {
-            padding-left: 5%;
-            padding-right: 5%;
-            font-size: 12px;
-        }
+  }
+  
+  @media (max-width: 768px) {
+    .about-section {
+      display: block;
+      padding-top: 150px;
     }
-
-    @media (max-width:768px) {
-        .about-section h1 {
-            font-size: 2.5em !important;
-            text-align: left;
-        }
-
-        .about-section p {
-            text-align: left;
-        }
-
-        .container {
-            display: initial;
-        }
-
-        .social_icons {
-            display: none !important;
-        }
-
-        .mobile_social_icons {
-            padding-top: 10px;
-            display: flex !important;
-            flex-direction: row;
-            gap: 10px;
-            color: white;
-    
-            svg {
-                font-size: 1.8em;
-            }
-        }
-
-        .about-section {
-            padding-top: 150px;
-            display: block;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .about-section .content {
-            width: 90%;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-bottom: 5%;
-        }
-
-        .about-section .image-wrapper {
-            padding-left: 5%;
-            width: 100%;
-        }
+    .about-section .content {
+      width: 90%;
+      padding: 0 5% 5%;
     }
-}
+    .about-section .image-wrapper {
+      width: 100%;
+      padding-left: 5%;
+    }
+    .social_icons { display: none; }
+    .mobile_social_icons {
+      display: flex;
+      gap: 10px;
+      padding-top: 10px;
+      color: white;
+  
+      svg { font-size: 1.8em; }
+    }
+    h1 { font-size: 2.5em !important; text-align: left; }
+  }
+  
+  @media (max-width: 567px) {
+    h1 { font-size: 2em !important; }
+    body { width: 100%; }
+  }
+  
